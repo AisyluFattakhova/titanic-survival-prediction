@@ -15,7 +15,7 @@ The project is fully containerized using **Docker** and orchestrated with **dock
 
 
 ```bash
-git clone <your_repo_url>
+git clone https://github.com/AisyluFattakhova/titanic-survival-prediction.git
 cd titanic-survival-prediction/code/deployment
 docker-compose up --build
 ```
