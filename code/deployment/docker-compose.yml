@@ -1,0 +1,22 @@
+services:
+  fastapi:
+    build:
+      context: ../..                        # project root
+      dockerfile: code/deployment/api/Dockerfile
+    container_name: fastapi
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../../models:/app/models            # mount host models folder exactly as /app/models
+
+  streamlit:
+    build:
+      context: ../..                        # project root
+      dockerfile: code/deployment/app/Dockerfile
+    container_name: streamlit
+    ports:
+      - "8501:8501"
+    depends_on:
+      - fastapi
+    environment:
+      - FASTAPI_URL=http://fastapi:8000/predict

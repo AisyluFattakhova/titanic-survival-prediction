@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.csv          # your raw dataset
+.env
+.vscode/
